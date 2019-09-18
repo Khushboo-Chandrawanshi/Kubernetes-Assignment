@@ -1,0 +1,25 @@
+ASSIGNMENT 1
+root@worker01:/home/khushboo# docker volume ls
+DRIVER              VOLUME NAME
+local               clientvol
+local               servervol
+root@worker01:/home/khushboo#
+
+ASSIGNMENT 2
+khushboo@khushboo-kmaster:~$ sudo su
+[sudo] password for khushboo:
+root@khushboo-kmaster:/home/khushboo# kubectl get nodes
+
+NAME               STATUS   ROLES    AGE   VERSION
+khushboo-kmaster   Ready    master   12d   v1.15.3
+worker01           Ready    <none>   12d   v1.15.3
+worker02           Ready    <none>   12d   v1.15.3
+root@khushboo-kmaster:/home/khushboo#
+
+
+ASSIGNMENT 4
+There are a few reasons for using proxying for Services:
+
+. There is a long history of DNS implementations not respecting record TTLs, and caching the results of name lookups after they should have expired.
+. Some apps do DNS lookups only once and cache the results indefinitely.
+. Even if apps and libraries did proper re-resolution, the low or zero TTLs on the DNS records could impose a high load on DNS that then becomes difficult to manage
